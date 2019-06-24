@@ -15,7 +15,7 @@ As @addyosmani said in his twitter,
 
 > Native &lt;img&gt; lazy-loading is coming to the web! [https://t.co/LgF7F1iMgR](https://t.co/LgF7F1iMgR") &lt;img loading=lazy&gt; defers offscreen images until the user scrolls near them. Shipping in Chrome ~75 [https://t.co/4gR7lvx4zx](https://t.co/4gR7lvx4zx)
 
-> ![https://pic.twitter.com/luCHEfLkKD](https://pbs.twimg.com/media/D3h8TW4UwAAj1jX?format=png&name=medium)
+> [![Native img lazy-load](https://pbs.twimg.com/media/D3h8TW4UwAAj1jX?format=png&name=medium)](https://pic.twitter.com/luCHEfLkKD)
  
 > &mdash; Addy Osmani (@addyosmani) [April 7, 2019](https://t/witter.com/addyosmani/status/1114777583302799360?ref_src=twsrc%5Etfw) 
 
