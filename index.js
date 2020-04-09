@@ -16,6 +16,9 @@ class LazyLoadPlugin {
           $('img').each((i, item) => {
             $(item).attr('loading', 'lazy');
           });
+          $('iframe').each((i, item) => {
+            $(item).attr('loading', 'lazy');
+          });
           data.html = $.html();
           cb(null, data);
         }
