@@ -1,27 +1,17 @@
-// Copyright (C) 2017 by OpenResty Inc. All rights reserved.
-
 module.exports = {
+  root: true,
   env: {
-    es6: true,
     node: true,
-    commonjs: true
-  },
-  parserOptions: {
-    "ecmaVersion": 8,
-    sourceType: 'module',
+    'es6': true,
   },
   extends: [
-    'eslint:recommended',
   ],
   globals: {
-    PRODUCTION: false,
-    process: false,
-    describe: false,
-    it: false,
-    expect: false,
+  },
+  parserOptions: {
+    'ecmaVersion': 2020,
   },
   rules: {
-    'no-console': [0],
     indent: [1, 2, {
       SwitchCase: 1,
     }],
@@ -49,5 +39,9 @@ module.exports = {
     'space-before-function-paren': [2, 'never'],
     'no-control-regex': 0,
     'eol-last': [2],
+    'no-case-declarations': 0,
+    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'no-mixed-operators': 0,
   },
 };

@@ -21,7 +21,7 @@ class LazyLoadPlugin {
           });
           data.html = $.html();
           cb(null, data);
-        }
+        },
       );
     });
   }
