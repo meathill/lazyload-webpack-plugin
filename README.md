@@ -1,31 +1,39 @@
 lazyload-webpack-plugin
 ========
 
-A webpack plugin for adding `loading="lazy"`into all `&lt;img>` in HtmlWebpackPlugin pages.
+A webpack plugin for adding `loading="lazy"`into all `<img>` and `<iframe>` in
+HtmlWebpackPlugin pages.
 
-Currently it **DOES NOT** support any other lazyload methods. I will add them in the future. 
+Currently, it **DOES NOT** support any other lazy-loading methods.
+I will add them in the future.
 
 Note: This is an extension plugin for [html-webpack-plugin](https://github.com/ampedandwired/html-webpack-plugin),
-and only work with html-webpack-plugin@4+.
+and only work with html-webpack-plugin@5+.
+
 
 Introduction
 --------
 
 As @addyosmani said in his twitter,
 
-> Native &lt;img&gt; lazy-loading is coming to the web! [https://t.co/LgF7F1iMgR](https://t.co/LgF7F1iMgR") &lt;img loading=lazy&gt; defers offscreen images until the user scrolls near them. Shipping in Chrome ~75 [https://t.co/4gR7lvx4zx](https://t.co/4gR7lvx4zx)
+> Native <img> lazy-loading is coming to the web! [https://t.co/LgF7F1iMgR](https://t.co/LgF7F1iMgR") <img loading=lazy> defers offscreen images until the user scrolls near them. Shipping in Chrome ~75 [https://t.co/4gR7lvx4zx](https://t.co/4gR7lvx4zx)
 
 > [![Native img lazy-load](https://pbs.twimg.com/media/D3h8TW4UwAAj1jX?format=png&name=medium)](https://pic.twitter.com/luCHEfLkKD)
- 
-> &mdash; Addy Osmani (@addyosmani) [April 7, 2019](https://t/witter.com/addyosmani/status/1114777583302799360?ref_src=twsrc%5Etfw) 
 
-Chrome will support `loading="lazy"` in `<img>` to turn on native lazy-load.
-Then I think I can do this via a webpack plugin, adding this attribute to all `<img>`s.
+> &mdash; Addy Osmani (@addyosmani) [April 7, 2019](https://t/witter.com/addyosmani/status/1114777583302799360?ref_src=twsrc%5Etfw)
 
-Pre-requisites  
+Chrome/Edge/Firefox support `loading="lazy"` in `<img>` and `<iframe>`
+to turn on native lazy-load.
+
+Then I think I can do this via a webpack plugin, adding this attribute to all
+`<img>`s and `<iframe>`s.
+
+
+Pre-requisites
 --------
 
-This module requires Webpack@4+, and html-webpack-plugin@4+.
+This module requires Webpack@5+, and html-webpack-plugin@5+.
+
 
 Installation
 --------
@@ -35,6 +43,7 @@ First, install this package as a dependency in your package.json:
 ```bash
 $ npm i -D lazyload-webpack-plugin
 ```
+
 
 Usage
 --------
@@ -53,10 +62,12 @@ module.exports = {
 }
 ```
 
+
 TODO
 --------
 
-1. Add support for other lazyload methods.
+1. Add support for other lazy-loading methods.
+
 
 Author
 --------
@@ -64,6 +75,7 @@ Author
 Meathill (Lujia Zhai) <[meathill@gmail.com](mailto:meathill@gmail.com)>
 
 I'm a developer live in Guangzhou, China.
+
 
 License
 --------
