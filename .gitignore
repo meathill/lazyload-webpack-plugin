@@ -4,5 +4,5 @@
 # repo
 node_modules
 
-# test
-tmp
+# dist
+dist

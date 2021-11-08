@@ -4,8 +4,10 @@
   "description": "A webpack plugin for adding `loading=\"lazy\"`into all `<img>` in HtmlWebpackPlugin pages.",
   "main": "index.js",
   "scripts": {
-    "test": "webpack --mode=production --config test/webpack.config.js",
-    "lint": "eslint ./ --fix"
+    "dev": "webpack --config sample/webpack.config.js",
+    "lint": "eslint ./ --fix",
+    "test": "jest",
+    "publish": "npm publish"
   },
   "repository": {
     "type": "git",
@@ -27,12 +29,13 @@
   },
   "homepage": "https://github.com/meathill/lazyload-webpack-plugin#readme",
   "devDependencies": {
-    "eslint": "^7.28.0",
-    "html-webpack-plugin": "^5.3.1",
-    "webpack": "^5.38.1",
-    "webpack-cli": "^4.7.0"
+    "eslint": "^8.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "jest": "^27.3.1",
+    "webpack": "^5.62.1",
+    "webpack-cli": "^4.9.1"
   },
   "dependencies": {
-    "cheerio": "^1.0.0-rc.9"
+    "cheerio": "^1.0.0-rc.10"
   }
 }

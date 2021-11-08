@@ -5,8 +5,9 @@ const {resolve} = require('path');
 module.exports = {
   entry: resolve(__dirname, './index.js'),
   output: {
-    path: resolve(__dirname, '../tmp'),
+    path: resolve(__dirname, '../dist'),
   },
+  mode: 'production',
   plugins: [
     new HtmlWebpackPlugin({
       template: resolve(__dirname, './index.html'),
