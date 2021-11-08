@@ -1,4 +1,6 @@
 sample
+dist
+test
 .idea
 .editorconfig
 .eslintignore

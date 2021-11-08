@@ -30,10 +30,12 @@
   "homepage": "https://github.com/meathill/lazyload-webpack-plugin#readme",
   "devDependencies": {
     "eslint": "^8.2.0",
-    "html-webpack-plugin": "^5.5.0",
-    "jest": "^27.3.1",
+    "jest": "^27.3.1"
+  },
+  "peerDependencies": {
     "webpack": "^5.62.1",
-    "webpack-cli": "^4.9.1"
+    "webpack-cli": "^4.9.1",
+    "html-webpack-plugin": "^5.5.0"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.10"
