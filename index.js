@@ -13,11 +13,12 @@ class LazyLoadPlugin {
           const $ = cheerio.load(html, {
             decodeEntities: false,
           });
-          $('img').each((i, item) => {
-            $(item).attr('loading', 'lazy');
-          });
-          $('iframe').each((i, item) => {
-            $(item).attr('loading', 'lazy');
+          $('img, iframe').each((i, item) => {
+            item = $(item);
+            if (item.hasAttribute('loading')) {
+              return;
+            }
+            item.attr('loading', 'lazy');
           });
           data.html = $.html();
           cb(null, data);
