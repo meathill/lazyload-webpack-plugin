@@ -2,6 +2,7 @@ sample
 dist
 test
 .idea
+.github
 .editorconfig
 .eslintignore
 .eslintrc.js
