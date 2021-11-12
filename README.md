@@ -1,14 +1,46 @@
 lazyload-webpack-plugin
 ========
 
+![Workflow status](https://github.com/meathill/lazyload-webpack-plugin/actions/workflows/node.js.yml/badge.svg)
+
 A webpack plugin for adding `loading="lazy"`into all `<img>` and `<iframe>` in
 HtmlWebpackPlugin pages.
 
-Currently, it **DOES NOT** support any other lazy-loading methods.
-I will add them in the future.
-
-Note: This is an extension plugin for [html-webpack-plugin](https://github.com/ampedandwired/html-webpack-plugin),
+**Note:** This is an extension plugin for [html-webpack-plugin](https://github.com/ampedandwired/html-webpack-plugin),
 and only work with html-webpack-plugin@5+.
+
+
+Usage
+--------
+
+First, install this package as a dependency in your package.json:
+
+```bash
+$ npm i -D lazyload-webpack-plugin
+```
+
+Next, use it in your Webpack config:
+
+```js
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const LazyLoadWebpackPlugin = require('lazyload-webpack-plugin');
+
+module.exports = {
+  plugins: [
+    new HtmlWebpackPlugin(),
+    new LazyLoadWebpackPlugin(),
+  ]
+}
+```
+
+You can avoid adding `loading="lazy"` to all `<img>` and `<iframe>` by
+specifically adding `loading` to the `<img>` and `<iframe>` tag you don't want
+to.
+
+Pre-requisites
+--------
+
+This module requires Webpack@5+, and html-webpack-plugin@5+.
 
 
 Introduction
@@ -28,39 +60,6 @@ to turn on native lazy-load.
 Then I think I can do this via a webpack plugin, adding this attribute to all
 `<img>`s and `<iframe>`s.
 
-
-Pre-requisites
---------
-
-This module requires Webpack@5+, and html-webpack-plugin@5+.
-
-
-Installation
---------
-
-First, install this package as a dependency in your package.json:
-
-```bash
-$ npm i -D lazyload-webpack-plugin
-```
-
-
-Usage
---------
-
-Next, use it in your Webpack config:
-
-```js
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const LazyLoadWebpackPlugin = require('lazyload-webpack-plugin');
-
-module.exports = {
-  plugins: [
-    new HtmlWebpackPlugin(),
-    new LazyLoadWebpackPlugin(),
-  ]
-}
-```
 
 
 TODO
