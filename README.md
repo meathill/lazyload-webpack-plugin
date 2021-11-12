@@ -1,10 +1,11 @@
 lazyload-webpack-plugin
-========
+=======================
 
 ![Workflow status](https://github.com/meathill/lazyload-webpack-plugin/actions/workflows/node.js.yml/badge.svg)
 
 A webpack plugin for adding `loading="lazy"`into all `<img>` and `<iframe>` in
-HtmlWebpackPlugin pages.
+HtmlWebpackPlugin pages. If **NOT** all of the target browsers supports
+`loading` attribute, then fallback to [lazysizes](https://github.com/aFarkas/lazysizes).
 
 **Note:** This is an extension plugin for [html-webpack-plugin](https://github.com/ampedandwired/html-webpack-plugin),
 and only work with html-webpack-plugin@5+.
@@ -28,8 +29,11 @@ const LazyLoadWebpackPlugin = require('lazyload-webpack-plugin');
 module.exports = {
   plugins: [
     new HtmlWebpackPlugin(),
-    new LazyLoadWebpackPlugin(),
-  ]
+    new LazyLoadWebpackPlugin({
+      // you can use other lazyload library which support the same API
+      lazyloadLib: 'https://LIB_URL',
+    }),
+  ],
 }
 ```
 
@@ -38,13 +42,13 @@ specifically adding `loading` to the `<img>` and `<iframe>` tag you don't want
 to.
 
 Pre-requisites
---------
+--------------
 
 This module requires Webpack@5+, and html-webpack-plugin@5+.
 
 
 Introduction
---------
+------------
 
 As @addyosmani said in his twitter,
 
@@ -65,7 +69,8 @@ Then I think I can do this via a webpack plugin, adding this attribute to all
 TODO
 --------
 
-1. Add support for other lazy-loading methods.
+1. ~~Add support for other lazy-loading methods.~~
+2. Support customization lazyload fallback function
 
 
 Author
