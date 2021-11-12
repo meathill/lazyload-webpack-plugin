@@ -41,14 +41,14 @@ class LazyLoadPlugin {
           });
           $('img, iframe').each((i, item) => {
             item = $(item);
-            if (item.hasAttribute('loading')) {
+            if (item.is('[loading]')) {
               return;
             }
             // if NOT all target browsers support `loading="lazy"`, fallback to
             // [lazysizes](https://github.com/aFarkas/lazysizes)
             if (!isAllSupportLoadingAttribute) {
               const src = item.attr('src');
-              item.data('src', src);
+              item.attr('data-src', src);
               item.removeAttr('src');
               item.addClass('lazyload');
             }
@@ -59,7 +59,7 @@ class LazyLoadPlugin {
           if (!isAllSupportLoadingAttribute) {
             const script = $('script').last();
             const funcBody = fallback.toString().replace('{{lazyloadLib}}', this.options.lazyloadLib);
-            script.before(`<script>${funcBody}</script>`);
+            script.after(`<script>(${funcBody})()</script>`);
           }
 
           data.html = $.html();
