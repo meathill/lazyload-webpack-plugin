@@ -12,6 +12,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: resolve(__dirname, './index.html'),
     }),
-    new LazyLoadPlugin(),
+    new LazyLoadPlugin({
+      imageSize: true,
+    }),
   ],
 };
